@@ -1,45 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // mock data
 import products from './data/products.json';
 
 // components
+import Navigation from './components/Navigation';
 import PageNotFound from './components/PageNotFound';
 import ProductDetails from './components/ProductDetails';
 import ProductList from "./components/ProductList";
-
-import './styles/app.css';
 
 const App = () => {
   return (
     <div className="app">
       <Router>
         <h1>Example shop</h1>
-        <nav>
-          <ul>
-            <li>
-              <NavLink activeClassName="selected-link" exact to="/">
-                Go to homepage
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="selected-link" to="/products">
-                Products
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="selected-link" to="/about">
-                About
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="selected-link" to="/contact-us">
-                Contact
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+        <Navigation />
         <Switch>
           <Route exact path="/">
             <h1>Home</h1>
